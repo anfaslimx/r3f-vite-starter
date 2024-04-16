@@ -1,3 +1,5 @@
+import { Office } from "./Office";
+
 export const Experience = () => {
   return (
     <>
