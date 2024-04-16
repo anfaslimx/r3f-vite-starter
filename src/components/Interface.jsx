@@ -68,7 +68,7 @@ const AboutSection = () => {
         who creates through innovative methods.
       </motion.p>
       <motion.button
-        className={`bg-indigo-600 text-white py-4 px-8 
+        className={`bg-teal-600 text-white py-4 px-8 
       rounded-lg font-bold text-lg mt-16`}
         initial={{
           opacity: 0,
@@ -145,7 +145,7 @@ const SkillsSection = () => {
               </motion.h3>
               <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                 <motion.div
-                  className="h-full bg-indigo-500 rounded-full "
+                  className="h-full bg-teal-500 rounded-full "
                   style={{ width: `${skill.level}%` }}
                   initial={{
                     scaleX: 0,
@@ -189,7 +189,7 @@ const SkillsSection = () => {
                 </motion.h3>
                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                   <motion.div
-                    className="h-full bg-indigo-500 rounded-full "
+                    className="h-full bg-teal-500 rounded-full "
                     style={{ width: `${lng.level}%` }}
                     initial={{
                       scaleX: 0,
@@ -253,7 +253,7 @@ const ContactSection = () => {
             id="message"
             className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
           />
-          <button className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
+          <button className="bg-teal-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
             Submit
           </button>
         </form>

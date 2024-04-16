@@ -5,10 +5,12 @@ Command: npx gltfjsx@6.2.16 public/models/scene.gltf
 
 import React from "react";
 import { useGLTF, useTexture } from '@react-three/drei';
-
+import {motion} from "framer-motion-3d";
 import * as THREE from "three";
 
 export function Office(props) {
+
+  const {section} = props;
   const { nodes, materials } = useGLTF('models/scene.gltf');
   const texture = useTexture("textures/baked.jpg");
   texture.flipY = false;
@@ -38,12 +40,22 @@ export function Office(props) {
         <mesh name="SM_ShelfSM_Shelf1_1" geometry={nodes.SM_ShelfSM_Shelf1_1.geometry} material={textureMaterial} />
         <mesh name="SM_ShelfSM_Shelf1_1_1" geometry={nodes.SM_ShelfSM_Shelf1_1_1.geometry} material={textureMaterial} />
       </group>
-      <group name="LavaLamp" position={[-1.302, 2.071, -1.986]}>
+      <motion.group 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0.5,
+      }}
+        name="LavaLamp" 
+        position={[-1.302, 2.071, -1.986]}
+    >
         <mesh name="Node-Mesh001" geometry={nodes['Node-Mesh001'].geometry} material={textureMaterial} />
         <mesh name="Node-Mesh001_1" geometry={nodes['Node-Mesh001_1'].geometry} material={textureMaterial} />
         <mesh name="Node-Mesh001_2" geometry={nodes['Node-Mesh001_2'].geometry} material={textureMaterial} />
-      </group>
-      <group name="keyboard" position={[-0.044, 0.981, -1.346]}>
+      </motion.group>
+      <group 
+        name="keyboard" 
+        position={[-0.044, 0.981, -1.346]}>
+          
         <mesh name="mesh425587018" geometry={nodes.mesh425587018.geometry} material={textureMaterial} />
         <mesh name="mesh425587018_1" geometry={nodes.mesh425587018_1.geometry} material={textureMaterial} />
         <mesh name="mesh425587018_2" geometry={nodes.mesh425587018_2.geometry} material={textureMaterial} />
