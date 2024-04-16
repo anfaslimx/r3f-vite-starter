@@ -10,6 +10,10 @@ function App() {
   const [section, setSection] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
 
+  useEffect(() => {
+    setMenuOpened(false);
+  }, [section]);
+
   return (
     <> 
     <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>

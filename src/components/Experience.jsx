@@ -1,10 +1,8 @@
 export const Experience = () => {
   return (
     <>
-      <mesh>
-        <boxGeometry />
-        <meshNormalMaterial />
-      </mesh>
+     <ambientLight intensity={1} />
+     <Office />
     </>
   );
 };
