@@ -46,7 +46,7 @@ const AboutSection = () => {
       <h1 className="text-6xl font-extrabold leading-snug">
         Hi, I'm
         <br />
-        <span className="bg-white px-1 italic">Anfa Slim</span>
+        <span className="bg-white px-1 italic">ANFASLIM</span>
       </h1>
       <motion.p
         className="text-lg text-gray-600 mt-4"
