@@ -43,13 +43,13 @@ export const Interface = () => {
 const AboutSection = () => {
   return (
     <Section>
-      <h1 className="text-6xl font-extrabold leading-snug">
+      <h1 className="text-6xl text-gray-200 font-extrabold leading-snug">
         Hi, I'm
         <br />
-        <span className="bg-white px-1 italic">ANFASLIM</span>
+        <span className=" px-1 italic">ANFASLIM</span>
       </h1>
       <motion.p
-        className="text-lg text-gray-600 mt-4"
+        className="text-lg text-gray-300 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -68,7 +68,7 @@ const AboutSection = () => {
         who creates through innovative methods.
       </motion.p>
       <motion.button
-        className={`bg-teal-600 text-white py-4 px-8 
+        className={`bg-blue-600 text-white py-4 px-8 
       rounded-lg font-bold text-lg mt-16`}
         initial={{
           opacity: 0,
@@ -127,7 +127,7 @@ const SkillsSection = () => {
           {skills.map((skill, index) => (
             <div className="w-64" key={index}>
               <motion.h3
-                className="text-xl font-bold text-gray-800"
+                className="text-xl font-bold text-gray-200"
                 initial={{
                   opacity: 0,
                 }}
@@ -143,9 +143,9 @@ const SkillsSection = () => {
               >
                 {skill.title}
               </motion.h3>
-              <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+              <div className="h-2 w-full bg-gray-400 rounded-full mt-2">
                 <motion.div
-                  className="h-full bg-teal-500 rounded-full "
+                  className="h-full bg-blue-500 rounded-full "
                   style={{ width: `${skill.level}%` }}
                   initial={{
                     scaleX: 0,
@@ -171,7 +171,7 @@ const SkillsSection = () => {
             {languages.map((lng, index) => (
               <div className="w-64" key={index}>
                 <motion.h3
-                  className="text-xl font-bold text-gray-800"
+                  className="text-xl font-bold text-gray-200"
                   initial={{
                     opacity: 0,
                   }}
@@ -189,7 +189,7 @@ const SkillsSection = () => {
                 </motion.h3>
                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                   <motion.div
-                    className="h-full bg-teal-500 rounded-full "
+                    className="h-full bg-blue-500 rounded-full "
                     style={{ width: `${lng.level}%` }}
                     initial={{
                       scaleX: 0,
@@ -228,7 +228,7 @@ const ContactSection = () => {
             type="text"
             name="name"
             id="name"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 p-3"
           />
           <label
             for="email"
@@ -240,7 +240,7 @@ const ContactSection = () => {
             type="email"
             name="email"
             id="email"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 p-3"
           />
           <label
             for="email"
@@ -251,9 +251,9 @@ const ContactSection = () => {
           <textarea
             name="message"
             id="message"
-            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 p-3"
           />
-          <button className="bg-teal-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
+          <button className="bg-blue-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
             Submit
           </button>
         </form>
