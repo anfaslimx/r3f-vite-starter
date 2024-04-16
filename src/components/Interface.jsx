@@ -65,7 +65,7 @@ const AboutSection = () => {
       >
         I'm a Visual Artist/Designer
         <br />
-        who loves to create and experiment with multiple mediums.
+        who creates through innovative methods.
       </motion.p>
       <motion.button
         className={`bg-indigo-600 text-white py-4 px-8 
