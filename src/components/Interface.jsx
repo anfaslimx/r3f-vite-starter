@@ -63,9 +63,9 @@ const AboutSection = () => {
           delay: 1.5,
         }}
       >
-        Im a visual artist and designer 
+        I'm a Visual Artist/Designer
         <br />
-        who loves to create beautiful things
+        who loves to create and experiment with multiple mediums.
       </motion.p>
       <motion.button
         className={`bg-indigo-600 text-white py-4 px-8 
