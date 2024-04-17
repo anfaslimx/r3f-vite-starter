@@ -9,6 +9,8 @@ import { Avatar } from "./Avatar";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useMotionValue } from "framer-motion";
 import { useEffect } from "react";
+import { animate } from "framer-motion";
+import { framerMotionConfig } from "../config";
 
 export const Experience = (props) => {
   const { section, menuOpened } = props;
