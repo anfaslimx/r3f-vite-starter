@@ -9,6 +9,7 @@ import { Menu } from "./components/Menu";
 import { ScrollManager } from "./components/ScrollManager";
 import { framerMotionConfig } from "./config";
 import { Leva } from "leva";
+import "tailwindcss/tailwind.css";
 
 function App() {
   const [section, setSection] = useState(0);
