@@ -96,10 +96,6 @@ const skills = [
     level: 100,
   },
   {
-    title: "Painting",
-    level: 100,
-  },
-  {
     title: "Animation",
     level: 90,
   },
