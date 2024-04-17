@@ -69,7 +69,7 @@ const AboutSection = () => {
         Creating through innovative methods.
       </motion.p>
       <motion.button
-        className={`bg-transparent border-2 border-blue-400  text-white py-4 px-8 
+        className={`bg-gray-800 border-2 border-blue-400  text-white py-4 px-8 
       rounded-lg font-bold text-lg mt-16`}
         initial={{
           opacity: 0,
@@ -90,29 +90,26 @@ const AboutSection = () => {
   );
 };
 
+
 const skills = [
   {
-    title: "Illustration",
+    title: "Digital Art & Illustration",
     level: 100,
   },
   {
-    title: "Animation",
+    title: "2D & 3D Design",
+    level: 95,
+  },
+  {
+    title: "2D & 3D Animation",
     level: 90,
   },
   {
-    title: "Graphic Design",
-    level: 90,
-  },
-  {
-    title: "3D Animation",
-    level: 70,
-  },
-  {
-    title: "3D Modeling",
+    title: "3D Modeling/Rendering",
     level: 60,
   },
   {
-    title: "Web Development",
+    title: "Threejs / Reach Three Fiber",
     level: 40,
   },
 ];
