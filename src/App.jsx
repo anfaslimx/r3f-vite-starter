@@ -1,7 +1,6 @@
 import { Scroll, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { MotionConfig } from "framer-motion";
-import { Leva } from "leva";
 import { useEffect, useState } from "react";
 import { Cursor } from "./components/Cursor";
 import { Experience } from "./components/Experience";
