@@ -43,13 +43,14 @@ export const Interface = () => {
 const AboutSection = () => {
   return (
     <Section>
-      <h1 className="text-6xl text-gray-200 font-extrabold leading-snug">
-        Hi, I'm
+      <h1 className="text-2xl text-gray-300 font-extrabold leading-snug">
+      私のポートフォリオサイトへようこそ、私はANFASLIMです
         <br />
-        <span className=" px-1 italic">ANFASLIM</span>
+        <span className=" px-1 italic">Welcome to my portfolio site, 
+        I'm ANFASLIM</span>
       </h1>
       <motion.p
-        className="text-lg text-gray-300 mt-4"
+        className="text-lg text-gray-400 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -63,12 +64,12 @@ const AboutSection = () => {
           delay: 1.5,
         }}
       >
-        I'm a Visual Artist/Designer
+        Visual Artist/Designer
         <br />
-        who creates through innovative methods.
+        Creating through innovative methods.
       </motion.p>
       <motion.button
-        className={`bg-blue-600 text-white py-4 px-8 
+        className={`bg-transparent border-2 border-blue-400  text-white py-4 px-8 
       rounded-lg font-bold text-lg mt-16`}
         initial={{
           opacity: 0,
@@ -122,7 +123,7 @@ const SkillsSection = () => {
   return (
     <Section>
       <motion.div whileInView={"visible"}>
-        <h2 className="text-5xl font-bold">Skills</h2>
+        <h2 className="text-5xl  text-gray-300 font-bold">Skills</h2>
         <div className=" mt-8 space-y-4">
           {skills.map((skill, index) => (
             <div className="w-64" key={index}>
@@ -166,7 +167,7 @@ const SkillsSection = () => {
           ))}
         </div>
         <div>
-          <h2 className="text-5xl font-bold mt-10">Languages</h2>
+          <h2 className="text-5xl  text-gray-300 font-bold mt-10">Languages</h2>
           <div className=" mt-8 space-y-4">
             {languages.map((lng, index) => (
               <div className="w-64" key={index}>
@@ -218,7 +219,7 @@ const SkillsSection = () => {
 const ContactSection = () => {
   return (
     <Section>
-      <h2 className="text-5xl font-bold">Contact me</h2>
+      <h2 className="text-5xl  text-gray-300 font-bold">Contact me</h2>
       <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
         <form>
           <label for="name" className="font-medium text-gray-900 block mb-1">
@@ -228,7 +229,7 @@ const ContactSection = () => {
             type="text"
             name="name"
             id="name"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 p-3"
+            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-300 p-3"
           />
           <label
             for="email"
@@ -240,7 +241,7 @@ const ContactSection = () => {
             type="email"
             name="email"
             id="email"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 p-3"
+            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-300 p-3"
           />
           <label
             for="email"
@@ -251,7 +252,7 @@ const ContactSection = () => {
           <textarea
             name="message"
             id="message"
-            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 p-3"
+            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-300 p-3"
           />
           <button className="bg-blue-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
             Submit
