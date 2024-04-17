@@ -119,7 +119,7 @@ export function Office(props) {
         <mesh name="Houseplant_7_1" geometry={nodes.Houseplant_7_1.geometry} material={textureMaterial} />
         <mesh name="Houseplant_7_2" geometry={nodes.Houseplant_7_2.geometry} material={textureMaterial} />
       </motion.group>
-      <motion.mesh 
+      <mesh 
       scale={[0, 0, 0]}
       animate={{
         scale: section === 0 ? 1 : 0,

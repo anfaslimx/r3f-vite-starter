@@ -63,7 +63,7 @@ export const Experience = (props) => {
               transparent
               distort={0.4}
               speed={4}
-              color={"pink"}
+              color={"#33DCFF"}
             />
           </mesh>
         </Float>
@@ -75,7 +75,7 @@ export const Experience = (props) => {
               transparent
               distort={1}
               speed={5}
-              color="blue"
+              color="#3376FF"
             />
           </mesh>
         </Float>
@@ -87,11 +87,11 @@ export const Experience = (props) => {
               transparent
               factor={1}
               speed={5}
-              color={"green"}
+              color={"#F256ED"}
             />
           </mesh>
         </Float>
-        <group scale={[2, 2, 2]} position-y={-1.5} rot>
+        <group scale={[2, 2, 2]} position-y={-1.5} rotation-x={Math.PI / 2}>
           <Avatar animation={section === 0 ? "Falling" : "Standing"} />
         </group>
       </motion.group>

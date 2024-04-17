@@ -28,21 +28,21 @@ export const ScrollManager = (props) => {
 
   useFrame(() => {
     if (isAnimating.current) {
-      lastScroll.current = data.scroll.current;
+      lastScroll.current = data.offset;
       return;
     }
 
     const curSection = Math.floor(data.scroll.current * data.pages);
-    if (data.scroll.current > lastScroll.current && curSection === 0) {
+    if (data.offset > lastScroll.current && curSection === 0) {
       onSectionChange(1);
     }
     if (
-      data.scroll.current < lastScroll.current &&
-      data.scroll.current < 1 / (data.pages - 1)
+      data.offset < lastScroll.current &&
+      data.offset < 1 / (data.pages - 1)
     ) {
       onSectionChange(0);
     }
-    lastScroll.current = data.scroll.current;
+    lastScroll.current = data.offset;
   });
 
   return null;
