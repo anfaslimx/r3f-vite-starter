@@ -14,27 +14,28 @@ export const Experience = (props) => {
 
   return (
     <>
-     <ambientLight intensity={1} />
-     <motion.group 
-      position={[1.5, 2, 3]}
-      scale={[ 0.9, 0.9, 0.9]} 
-      rotation-y={-Math.PI / 4}
-      animate={{
-        y: section === 0 ? 0 : -1,
-      }}
-    >
-     <Office section={section} />
-     </motion.group>
+      <ambientLight intensity={1} />
+      <motion.group
+        position={[1.5, 2, 3]}
+        scale={[0.9, 0.9, 0.9]}
+        rotation-y={-Math.PI / 4}
+        animate={{
+          y: section === 0 ? 0 : -1,
+        }}
+      >
+        <Office section={section} />
+      </motion.group>
 
-     {/* SKILLS */}
-     <motion.group position={[0, -1.5, -10]}
-     animate={{
-        z: section === 1 ? 0 : -10,
-        y: section === 1 ? -viewport.height : -1.5,
-     }}
-     >
-      <directionalLight position={[-5, 3, 5]} intensity={0.4} />
-      <Float>
+      {/* SKILLS */}
+      <motion.group
+        position={[0, -1.5, -10]}
+        animate={{
+          z: section === 1 ? 0 : -10,
+          y: section === 1 ? -viewport.height : -1.5,
+        }}
+      >
+        <directionalLight position={[-5, 3, 5]} intensity={0.4} />
+        <Float>
           <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
             <sphereGeometry />
             <MeshDistortMaterial
@@ -42,19 +43,19 @@ export const Experience = (props) => {
               transparent
               distort={0.4}
               speed={4}
-              color={"green"}
+              color={"red"}
             />
           </mesh>
-       </Float> 
-       <Float>
+        </Float>
+        <Float>
           <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
-          <sphereGeometry />
+            <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
               transparent
               distort={1}
               speed={5}
-              color="blue"
+              color="yellow"
             />
           </mesh>
         </Float>
@@ -66,14 +67,14 @@ export const Experience = (props) => {
               transparent
               factor={1}
               speed={5}
-              color={"yellow"}
+              color={"blue"}
             />
           </mesh>
         </Float>
         <group scale={[2, 2, 2]} position-y={-1.5}>
           <Avatar animation={section === 0 ? "Falling" : "Standing"} />
         </group>
-        </motion.group>
+      </motion.group>
     </>
   );
 };
