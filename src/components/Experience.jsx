@@ -1,20 +1,19 @@
-import { 
-  Float, 
-  MeshDistortMaterial, 
-  MeshWobbleMaterial
+import {
+  Float,
+  MeshDistortMaterial,
+  MeshWobbleMaterial,
 } from "@react-three/drei";
-import { Office } from "./Office";
-import { motion } from "framer-motion-3d";
-import { Avatar } from "./Avatar";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useMotionValue } from "framer-motion";
+import { animate, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion-3d";
 import { useEffect } from "react";
-import { animate } from "framer-motion";
 import { framerMotionConfig } from "../config";
+import { Avatar } from "./Avatar";
+import { Office } from "./Office";
 
 export const Experience = (props) => {
   const { section, menuOpened } = props;
-  const {viewport} = useThree();
+  const { viewport } = useThree();
 
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
@@ -64,7 +63,7 @@ export const Experience = (props) => {
               transparent
               distort={0.4}
               speed={4}
-              color={"green"}
+              color={"red"}
             />
           </mesh>
         </Float>
@@ -76,7 +75,7 @@ export const Experience = (props) => {
               transparent
               distort={1}
               speed={5}
-              color="blue"
+              color="yellow"
             />
           </mesh>
         </Float>
@@ -88,7 +87,7 @@ export const Experience = (props) => {
               transparent
               factor={1}
               speed={5}
-              color={"red"}
+              color={"blue"}
             />
           </mesh>
         </Float>
