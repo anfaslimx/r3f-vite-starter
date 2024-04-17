@@ -4,9 +4,10 @@ Command: npx gltfjsx@6.2.16 public/models/scene.gltf
 */
 
 import React, { useEffect } from "react";
-import { useGLTF, useMotionValue, useTexture } from '@react-three/drei';
-import {motion} from "framer-motion-3d";
+import { useGLTF, useTexture } from '@react-three/drei';
+import { motion } from "framer-motion-3d";
 import * as THREE from "three";
+import { animate, useMotionValue } from "framer-motion";
 import { useFrame } from "@react-three/fiber";
 
 export function Office(props) {
@@ -35,13 +36,13 @@ export function Office(props) {
 
   useEffect(() => {
     animate(textureOpacity, section === 0 ? 1 : 0);
-    animate(glassTextureOpacity, section === 0 ? 1 : 0);
+    animate(glassTextureOpacity, section === 0 ? 0.42 : 0);
   }, [section]);
 
   useFrame(() => {
     textureMaterial.opacity = textureOpacity.get();
     textureGlassMaterial.opacity = glassTextureOpacity.get();
-  })
+  });
 
   return (
     <group {...props} dispose={null}>
@@ -76,7 +77,11 @@ export function Office(props) {
         <mesh name="Node-Mesh001_1" geometry={nodes['Node-Mesh001_1'].geometry} material={textureMaterial} />
         <mesh name="Node-Mesh001_2" geometry={nodes['Node-Mesh001_2'].geometry} material={textureMaterial} />
       </motion.group>
-      <group 
+      <motion.group 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
         name="keyboard" 
         position={[-0.044, 0.981, -1.346]}>
           
@@ -84,8 +89,13 @@ export function Office(props) {
         <mesh name="mesh425587018_1" geometry={nodes.mesh425587018_1.geometry} material={textureMaterial} />
         <mesh name="mesh425587018_2" geometry={nodes.mesh425587018_2.geometry} material={textureMaterial} />
         <mesh name="mesh425587018_3" geometry={nodes.mesh425587018_3.geometry} material={textureMaterial} />
-      </group>
-      <mesh name="mouse" geometry={nodes.mouse.geometry} material={textureMaterial} />
+      </motion.group>
+      <motion.mesh 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
+      name="mouse" geometry={nodes.mouse.geometry} material={textureMaterial} />
       <motion.group 
       scale={[0, 0, 0]}
       animate={{
@@ -109,7 +119,12 @@ export function Office(props) {
         <mesh name="Houseplant_7_1" geometry={nodes.Houseplant_7_1.geometry} material={textureMaterial} />
         <mesh name="Houseplant_7_2" geometry={nodes.Houseplant_7_2.geometry} material={textureMaterial} />
       </motion.group>
-      <mesh name="rug" geometry={nodes.rug.geometry} material={textureMaterial} position={[0, 0, 0.827]} />
+      <motion.mesh 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
+      name="rug" geometry={nodes.rug.geometry} material={textureMaterial} position={[0, 0, 0.827]} />
       <motion.group 
       scale={[0, 0, 0]}
       animate={{
@@ -133,8 +148,18 @@ export function Office(props) {
         <mesh name="Lo_poly_Spaceship_03_by_Liz_Reddington_1_1" geometry={nodes.Lo_poly_Spaceship_03_by_Liz_Reddington_1_1.geometry} material={textureMaterial} />
         <mesh name="Lo_poly_Spaceship_03_by_Liz_Reddington_1_2" geometry={nodes.Lo_poly_Spaceship_03_by_Liz_Reddington_1_2.geometry} material={textureMaterial} />
       </motion.group>
-      <mesh name="Node-Mesh" geometry={nodes['Node-Mesh'].geometry} material={textureMaterial} />
-      <mesh name="Node-Mesh_1" geometry={nodes['Node-Mesh_1'].geometry} material={textureMaterial} />
+      <motion.mesh 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
+      name="Node-Mesh" geometry={nodes['Node-Mesh'].geometry} material={textureMaterial} />
+      <motion.mesh 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
+      name="Node-Mesh_1" geometry={nodes['Node-Mesh_1'].geometry} material={textureMaterial} />
       <mesh name="Plane001" geometry={nodes.Plane001.geometry} material={textureMaterial} />
       <mesh name="Plane001_1" geometry={nodes.Plane001_1.geometry} material={textureMaterial} />
       <mesh name="Plane001_2" geometry={nodes.Plane001_2.geometry} material={textureMaterial} />
