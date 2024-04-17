@@ -8,6 +8,7 @@ import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { useEffect } from "react";
 import { framerMotionConfig } from "../config";
+import { Avatar } from "./Avatar";
 import { Office } from "./Office";
 
 export const Experience = (props) => {
@@ -86,11 +87,11 @@ export const Experience = (props) => {
               transparent
               factor={1}
               speed={5}
-              color={"teal"}
+              color={"green"}
             />
           </mesh>
         </Float>
-        <group scale={[2, 2, 2]} position-y={-1.5}>
+        <group scale={[2, 2, 2]} position-y={-1.5} rot>
           <Avatar animation={section === 0 ? "Falling" : "Standing"} />
         </group>
       </motion.group>

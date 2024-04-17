@@ -14,7 +14,7 @@ export function Avatar(props) {
     headFollow: false,
     cursorFollow: false,
     wireframe: false,
-  }) 
+  }); 
   const group = useRef(); 
   const { nodes, materials } = useGLTF('models/66145c08ce94050000751914.glb');
 
