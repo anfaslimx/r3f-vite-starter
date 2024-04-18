@@ -72,42 +72,69 @@ export function Office(props) {
           <mesh name="Node-Mesh001_1" geometry={nodes['Node-Mesh001_1'].geometry} material={textureMaterial} />
           <mesh name="Node-Mesh001_2" geometry={nodes['Node-Mesh001_2'].geometry} material={textureMaterial} />
         </motion.group>
-        <group name="keyboard" position={[0.042, 0.981, -1.346]} rotation={[0, 0.084, 0]} scale={0.611}>
+        <group 
+        name="keyboard" position={[0.042, 0.981, -1.346]} rotation={[0, 0.084, 0]} scale={0.611}>
           <mesh name="mesh425587018" geometry={nodes.mesh425587018.geometry} material={textureMaterial} />
           <mesh name="mesh425587018_1" geometry={nodes.mesh425587018_1.geometry} material={textureMaterial} />
           <mesh name="mesh425587018_2" geometry={nodes.mesh425587018_2.geometry} material={textureMaterial} />
           <mesh name="mesh425587018_3" geometry={nodes.mesh425587018_3.geometry} material={textureMaterial} />
         </group>
-        <mesh name="mouse" geometry={nodes.mouse.geometry} material={textureMaterial} position={[-0.129, 0, -0.032]} />
+        <motion.mesh 
+         scale={[0, 0, 0]}
+         animate={{
+           scale: section === 0 ? 1 : 0,
+         }}
+        name="mouse" geometry={nodes.mouse.geometry} material={textureMaterial} position={[-0.129, 0, -0.032]} />
         <group name="Plant" position={[-0.78, 1.071, -1.61]}>
           <mesh name="mesh2053840647" geometry={nodes.mesh2053840647.geometry} material={textureMaterial} />
           <mesh name="mesh2053840647_1" geometry={nodes.mesh2053840647_1.geometry} material={textureMaterial} />
           <mesh name="mesh2053840647_2" geometry={nodes.mesh2053840647_2.geometry} material={textureMaterial} />
         </group>
-        <group name="houseplant" position={[-2.019, -0.042, -1.526]}>
+        <motion.group 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
+        name="houseplant" position={[-2.019, -0.042, -1.526]}>
           <mesh name="Houseplant_7" geometry={nodes.Houseplant_7.geometry} material={textureMaterial} />
           <mesh name="Houseplant_7_1" geometry={nodes.Houseplant_7_1.geometry} material={textureMaterial} />
           <mesh name="Houseplant_7_2" geometry={nodes.Houseplant_7_2.geometry} material={textureMaterial} />
-        </group>
-        <group name="Chair" position={[-0.156, 0, -0.683]} rotation={[0, -0.152, 0]}>
+        </motion.group>
+        <motion.group 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }} 
+        
+        name="Chair" position={[-0.156, 0, -0.683]} rotation={[0, -0.152, 0]}>
           <mesh name="Node-Mesh" geometry={nodes['Node-Mesh'].geometry} material={textureMaterial} />
           <mesh name="Node-Mesh_1" geometry={nodes['Node-Mesh_1'].geometry} material={textureMaterial} />
-        </group>
+        </motion.group>
         <mesh name="rug" geometry={nodes.rug.geometry} material={textureMaterial} position={[0, 0, 0.827]} />
-        <group name="imac" position={[0.098, 0.956, -1.665]} rotation={[-Math.PI, 0.219, -Math.PI]}>
+        <motion.group 
+      scale={[0, 0, 0]}
+      animate={{
+        scale: section === 0 ? 1 : 0,
+      }}
+         name="imac" position={[0.098, 0.956, -1.665]} rotation={[-Math.PI, 0.219, -Math.PI]}>
           <mesh name="IMac_01_Cube026-Mesh" geometry={nodes['IMac_01_Cube026-Mesh'].geometry} material={textureMaterial} />
           <mesh name="IMac_01_Cube026-Mesh_1" geometry={nodes['IMac_01_Cube026-Mesh_1'].geometry} material={textureMaterial} />
-        </group>
-        <group name="ship" position={[-0.431, 2.022, -2.022]} rotation={[0, -1.405, 0]}>
+        </motion.group>
+         <motion.group 
+         scale={[0, 0, 0]}
+         animate={{
+           scale: section === 0 ? 1 : 0,
+         }}
+        name="ship" position={[-0.431, 2.022, -2.022]} rotation={[0, -1.405, 0]}>
           <mesh name="Lo_poly_Spaceship_03_by_Liz_Reddington_1" geometry={nodes.Lo_poly_Spaceship_03_by_Liz_Reddington_1.geometry} material={textureMaterial} />
           <mesh name="Lo_poly_Spaceship_03_by_Liz_Reddington_1_1" geometry={nodes.Lo_poly_Spaceship_03_by_Liz_Reddington_1_1.geometry} material={textureMaterial} />
           <mesh name="Lo_poly_Spaceship_03_by_Liz_Reddington_1_2" geometry={nodes.Lo_poly_Spaceship_03_by_Liz_Reddington_1_2.geometry} material={textureMaterial} />
-        </group>
+        </motion.group>
         <group name="Plane">
           <mesh name="Plane001" geometry={nodes.Plane001.geometry} material={textureMaterial} />
           <mesh name="Plane001_1" geometry={nodes.Plane001_1.geometry} material={textureMaterial} />
           <mesh name="Plane001_2" geometry={nodes.Plane001_2.geometry} material={textureMaterial} />
-          <mesh name="Plane001_3" geometry={nodes.Plane001_3.geometry} material={materials.Glass} />
+          <mesh name="Plane001_3" geometry={nodes.Plane001_3.geometry} material={textureGlassMaterial} />
         </group>
       </group>
   );
