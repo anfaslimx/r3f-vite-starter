@@ -2,11 +2,12 @@ import {
   Float,
   MeshDistortMaterial,
   MeshWobbleMaterial,
+  useScroll,
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useEffect } from "react";
+import { useEffect,  useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
@@ -33,25 +34,62 @@ export const Experience = (props) => {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
 
-    const position = new THREE.Vector3();
-    characterContainerAboutRef.current.getWorldPosition(position);
+    // const position = new THREE.Vector3();
+    // characterContainerAboutRef.current.getWorldPosition(position);
     // console.log([position.x, position.y, position.z]);
 
-    const quaternion = new THREE.Quaternion();
-    characterContainerAboutRef.current.getWorldQuaternion(quaternion);
-    const euler = new THREE.Euler();
-    euler.setFromQuaternion(quaternion, "XYZ");
+    // const quaternion = new THREE.Quaternion();
+    // characterContainerAboutRef.current.getWorldQuaternion(quaternion);
+    // const euler = new THREE.Euler();
+    // euler.setFromQuaternion(quaternion, "XYZ");
 
-    console.log([euler.x, euler.y, euler.z]);
+    // console.log([euler.x, euler.y, euler.z]);
   });
 
   return (
     <>
-    <group 
-    position={[1.9072935059634513, 0.14400000000000002, 2.681801948466054]}
+    <motion.group 
+    position={[1.8072935059634513, 0.1800000000000000, 2.651801948466054]}
+    rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
+    animate={"" + section}
+    transition={{
+      duration: 0.6,
+    
+    }}
+    variants={{
+      0: {
+        scaleX: 0.9,
+        scaleY: 0.9,
+        scaleZ: 0.9,
+      },
+      1: {
+       y: -viewport.height + 0.5,
+       x: 0,
+       z: 7,
+       rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0,
+      },
+      2: {
+          x: -2,
+          y: -viewport.height * 2 + 0.5,
+          z: 0,
+          rotateX: 0,
+          rotateY: Math.PI / 2,
+          rotateZ: 0,
+      },
+      3: {
+          x: -viewport.height * 3 + 0.5,
+          y: 0.3,
+          z: 8.5,
+          rotateX: 0,
+          rotateY: -Math.PI / 4,
+          rotateZ: 0,
+      },
+    }}
     >
-    <Avatar animation={section === 0 ? "Typing" : "Standing"} />
-    </group>
+    <Avatar animation={section === 0 ? "Typing" : "Standing"} rotation-x={Math.PI /2}/>
+    </motion.group>
       <ambientLight intensity={1} />
       <motion.group
         position={[1.5, 2, 3]}
