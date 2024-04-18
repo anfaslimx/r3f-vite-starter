@@ -28,7 +28,7 @@ export const ScrollManager = (props) => {
 
   useFrame(() => {
     if (isAnimating.current) {
-      lastScroll.current = data.scroll.current;
+      lastScroll.current = data.offset;
       return;
     }
 
