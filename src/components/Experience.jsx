@@ -35,14 +35,22 @@ export const Experience = (props) => {
 
     const position = new THREE.Vector3();
     characterContainerAboutRef.current.getWorldPosition(position);
-    console.log([position.x, position.y, position.z]);
+    // console.log([position.x, position.y, position.z]);
+
+    const quaternion = new THREE.Quaternion();
+    characterContainerAboutRef.current.getWorldQuaternion(quaternion);
+    const euler = new THREE.Euler();
+    euler.setFromQuaternion(quaternion, "XYZ");
+
+    console.log([euler.x, euler.y, euler.z]);
   });
 
   return (
     <>
-    <group>
+    <group 
+    position={[1.9072935059634513, 0.14400000000000002, 2.681801948466054]}
+    >
     <Avatar animation={section === 0 ? "Typing" : "Standing"} />
-
     </group>
       <ambientLight intensity={1} />
       <motion.group
