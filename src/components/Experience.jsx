@@ -27,13 +27,23 @@ export const Experience = (props) => {
     });
   }, [menuOpened]);
 
+  const characterContainerAboutRef = useRef();
+
   useFrame((state) => {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
+
+    const position = new THREE.Vector3();
+    characterContainerAboutRef.current.getWorldPosition(position);
+    console.log([position.x, position.y, position.z]);
   });
 
   return (
     <>
+    <group>
+    <Avatar animation={section === 0 ? "Typing" : "Standing"} />
+
+    </group>
       <ambientLight intensity={1} />
       <motion.group
         position={[1.5, 2, 3]}
@@ -44,6 +54,14 @@ export const Experience = (props) => {
         }}
       >
         <Office section={section} />
+        <group 
+        ref={characterContainerAboutRef}
+        name="Empty" 
+        position={[-0.12, 0.224, -0.689]} 
+        rotation={[-Math.PI, 0.502, -Math.PI]}>
+          
+
+        </group>
 
 
       </motion.group>
@@ -93,9 +111,7 @@ export const Experience = (props) => {
             />
           </mesh>
         </Float>
-        <group scale={[2, 2, 2]} position-y={-1.5} rotation-x={Math.PI / 2}>
-          <Avatar animation={section === 0 ? "Falling" : "Standing"} />
-        </group>
+        
       </motion.group>
     </>
   );
