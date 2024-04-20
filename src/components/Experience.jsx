@@ -13,8 +13,11 @@ import { Avatar } from "./Avatar";
 import { Office } from "./Office";
 
 export const Experience = (props) => {
-  const { section, menuOpened } = props;
+  const { menuOpened } = props;
   const { viewport } = useThree();
+  const data = useScroll();
+
+  const [section, setSection] = useState(0);
 
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
@@ -31,6 +34,13 @@ export const Experience = (props) => {
   const characterContainerAboutRef = useRef();
 
   useFrame((state) => {
+
+    const curSection = Math.floor(data.scroll.current * data.pages);
+
+    if (curSection !== section) {
+      setSection (curSection);
+    }
+
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
 
