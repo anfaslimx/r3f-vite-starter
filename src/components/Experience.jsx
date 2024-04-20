@@ -35,7 +35,11 @@ export const Experience = (props) => {
 
   useFrame((state) => {
 
-    const curSection = Math.floor(data.scroll.current * data.pages);
+    let curSection = Math.floor(data.scroll.current * data.pages);
+
+    if (curSection > 3) {
+      curSection = 3;
+    }
 
     if (curSection !== section) {
       setSection (curSection);
