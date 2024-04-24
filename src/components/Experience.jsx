@@ -11,6 +11,7 @@ import { useEffect,  useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
+import { Projects } from "./Projects";
 
 export const Experience = (props) => {
   const { menuOpened } = props;
@@ -181,6 +182,7 @@ export const Experience = (props) => {
         </Float>
         
       </motion.group>
+      <Projects />
     </>
   );
 };
