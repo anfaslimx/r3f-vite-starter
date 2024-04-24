@@ -33,6 +33,14 @@ export const Experience = (props) => {
 
   const characterContainerAboutRef = useRef();
 
+  const {characterAnimation, setCharacterAnimation} = useState("Typing");
+  useEffect(() => {
+    setCharacterAnimation("Falling");
+    setTimeout(() => {
+     setCharacterAnimation(section === 0 ? "Typing" : "Standing");
+    }, 600);
+  }, [section]);
+
   useFrame((state) => {
 
     let curSection = Math.floor(data.scroll.current * data.pages);
@@ -102,7 +110,7 @@ export const Experience = (props) => {
       },
     }}
     >
-    <Avatar animation={section === 0 ? "Typing" : "Standing"} rotation-x={Math.PI /2}/>
+    <Avatar animation={characterAnimation} rotation-x={Math.PI /2}/>
     </motion.group>
       <ambientLight intensity={1} />
       <motion.group
