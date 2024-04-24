@@ -12,6 +12,7 @@ import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
 import { Projects } from "./Projects";
+import { Background } from "./Background";
 
 export const Experience = (props) => {
   const { menuOpened } = props;
@@ -71,12 +72,14 @@ export const Experience = (props) => {
 
   return (
     <>
+      <Background />
     <motion.group 
-    position={[1.8072935059634513, 0.1800000000000000, 2.651801948466054]}
+    position={[1.8072935059634513, 0.1800000000000000, 2.652801948466054]}
     rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
     animate={"" + section}
     transition={{
       duration: 0.6,
+    
     }}
     variants={{
       0: {
@@ -85,31 +88,31 @@ export const Experience = (props) => {
         scaleZ: 0.9,
       },
       1: {
-        y: -viewport.height + 0.5,
-        x: 0,
-        z: 7,
-        rotateX: 0,
+       y: -viewport.height + 0.5,
+       x: 0,
+       z: 7,
+       rotateX: 0,
         rotateY: 0,
         rotateZ: 0,
       },
       2: {
-        x: -2,
-        y: -viewport.height * 2 + 0.5,
-        z: 0,
-        rotateX: 0,
-        rotateY: Math.PI / 2,
-        rotateZ: 0,
-      },
-      3: {
-        y: -viewport.height * 3 + 1,
-        x: 0.3,
-        z: 8.5,
-        rotateX: 0,
-        rotateY: -Math.PI / 4,
-        rotateZ: 0,
-      },
-    }}
-  >
+          x: -2,
+          y: -viewport.height * 2 + 0.5,
+          z: 0,
+          rotateX: 0,
+          rotateY: Math.PI / 2,
+          rotateZ: 0,
+        },
+        3: {
+          y: -viewport.height * 3 + 1,
+          x: 0.3,
+          z: 8.5,
+          rotateX: 0,
+          rotateY: -Math.PI / 4,
+          rotateZ: 0,
+        },
+      }}
+    >
     <Avatar animation={characterAnimation} rotation-x={Math.PI /2}/>
     </motion.group>
       <ambientLight intensity={1} />

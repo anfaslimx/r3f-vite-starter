@@ -29,10 +29,11 @@ const Section = (props) => {
   );
 };
 
-export const Interface = () => {
+export const Interface = (props) => {
+  const { setSection } = props;
   return (
     <div className="flex flex-col items-center w-screen">
-      <AboutSection />
+      <AboutSection setSection={setSection} />
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
@@ -40,7 +41,8 @@ export const Interface = () => {
   );
 };
 
-const AboutSection = () => {
+const AboutSection = (props) => {
+  const { setSection } = props;
   return (
     <Section>
       <h1 className="text-2xl text-gray-300 font-extrabold leading-snug">
@@ -69,27 +71,27 @@ const AboutSection = () => {
         Creating through innovative methods.
       </motion.p>
       <motion.button
-        className={`bg-gray-800 border-2 border-blue-400  text-white py-4 px-8 
+        onClick={() => setSection(3)}
+        className={`transparent border-2 border-blue-400  text-white py-4 px-8 
       rounded-lg font-bold text-lg mt-16`}
-        initial={{
-          opacity: 0,
-          y: 25,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 1,
-          delay: 2,
-        }}
-      >
-        Contact me
-      </motion.button>
-    </Section>
-  );
+      initial={{
+        opacity: 0,
+        y: 25,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 1,
+        delay: 2,
+      }}
+    >
+      Contact me
+    </motion.button>
+  </Section>
+);
 };
-
 
 const skills = [
   {
@@ -232,14 +234,14 @@ const ProjectsSection = () => {
     <Section>
       <div className="flex w-full h-full gap-8 items-center justify-center">
         <button
-          className="hover:text-blue-400 transition-colors"
+          className="hover:text-blue-400  text-gray-600 transition-colors"
           onClick={previousProject}
         >
           ← Previous
         </button>
-        <h2 className="text-5xl font-bold">Projects</h2>
+        <h2 className="text-5xl  text-gray-300 font-bold">Projects</h2>
         <button
-          className="hover:text-blue-400 transition-colors"
+          className="hover:text-blue-400  text-gray-600 transition-colors"
           onClick={nextProject}
         >
           Next →
