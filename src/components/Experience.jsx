@@ -7,7 +7,7 @@ import {
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
@@ -33,11 +33,11 @@ export const Experience = (props) => {
 
   const characterContainerAboutRef = useRef();
 
-  const {characterAnimation, setCharacterAnimation} = useState("Typing");
+  const [characterAnimation, setCharacterAnimation] = useState("Typing");
   useEffect(() => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
-     setCharacterAnimation(section === 0 ? "Typing" : "Standing");
+      setCharacterAnimation(section === 0 ? "Typing" : "Standing");
     }, 600);
   }, [section]);
 
@@ -99,18 +99,18 @@ export const Experience = (props) => {
           rotateX: 0,
           rotateY: Math.PI / 2,
           rotateZ: 0,
-      },
-      3: {
-          x: -viewport.height * 3 + 1,
-          y: 0.3,
+        },
+        3: {
+          y: -viewport.height * 3 + 1,
+          x: 0.3,
           z: 8.5,
           rotateX: 0,
           rotateY: -Math.PI / 4,
           rotateZ: 0,
-      },
-    }}
+        },
+      }}
     >
-    <Avatar animation={characterAnimation} />
+    <Avatar animation={characterAnimation} rotation-x={Math.PI /2}/>
     </motion.group>
       <ambientLight intensity={1} />
       <motion.group
