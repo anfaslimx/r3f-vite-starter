@@ -7,7 +7,7 @@ import {
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useEffect,  useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
@@ -110,7 +110,7 @@ export const Experience = (props) => {
       },
     }}
     >
-    <Avatar animation={characterAnimation} rotation-x={Math.PI /2}/>
+    <Avatar animation={characterAnimation} />
     </motion.group>
       <ambientLight intensity={1} />
       <motion.group
