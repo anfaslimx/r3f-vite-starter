@@ -9,27 +9,31 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from "three";
 
 export function Avatar(props) {
-  const {animation} = props; 
-  const {headFollow, cursorFollow, wireframe } = useControls({
-    headFollow: false,
+  const {animation, wireframe } = props; 
+  const {headFollow, cursorFollow } = useControls({
+    headFollow: false, 
     cursorFollow: false,
-    wireframe: false,
   }); 
   const group = useRef(); 
   const { nodes, materials } = useGLTF('models/66145c08ce94050000751914.glb');
 
-  const {animations: typingAnimation } = useFBX("animations/Typing.fbx");
-  const {animations: standingAnimation } = useFBX("animations/Standing Idle.fbx");
-  const {animations: fallingAnimation } = useFBX("animations/Falling Idle.fbx");
+  const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
+  const { animations: standingAnimation } = useFBX(
+    "animations/Standing Idle.fbx"
+  );
+  const { animations: fallingAnimation } = useFBX(
+    "animations/Falling Idle.fbx"
+  );
 
   typingAnimation[0].name = "Typing";
   standingAnimation[0].name = "Standing";
   fallingAnimation[0].name = "Falling";
 
-  const { actions} = useAnimations(
+  const { actions } = useAnimations(
     [typingAnimation[0], standingAnimation[0], fallingAnimation[0]],
     group
   );
+
 
   useFrame((state) => {
     if (headFollow) {
@@ -132,7 +136,10 @@ export function Avatar(props) {
       />
     </group>
     </group>
-  )
-}
+  );
+};
 
-useGLTF.preload('models/66145c08ce94050000751914.glb')
+useGLTF.preload('models/66145c08ce94050000751914.glb');
+useFBX.preload("animations/Typing.fbx");
+useFBX.preload("animations/Standing Idle.fbx");
+useFBX.preload("animations/Falling Idle.fbx");

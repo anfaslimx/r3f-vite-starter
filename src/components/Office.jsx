@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.16 public/models/scene.gltf
 */
 
 import React, { useEffect } from "react";
-import { useGLTF, useTexture } from '@react-three/drei';
+import { useGLTF, useTexture, useVideoTexture } from '@react-three/drei';
 import { motion } from "framer-motion-3d";
 import * as THREE from "three";
 import { animate, useMotionValue } from "framer-motion";
@@ -15,6 +15,8 @@ export function Office(props) {
   const {section} = props;
   const { nodes, materials } = useGLTF('models/scene.gltf');
   const texture = useTexture("textures/baked.jpg");
+  const textureVSCode = useVideoTexture("textures/vscode.mp4");
+
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
 
@@ -35,8 +37,12 @@ export function Office(props) {
   const glassTextureOpacity = useMotionValue(0);
 
   useEffect(() => {
-    animate(textureOpacity, section === 0 ? 1 : 0);
-    animate(glassTextureOpacity, section === 0 ? 0.42 : 0);
+    animate(textureOpacity, section === 0 ? 1 : 0, {
+      duration: 0.8,
+    });
+    animate(glassTextureOpacity, section === 0 ? 0.42 : 0, {
+      duration: 0.8,
+    });
   }, [section]);
 
   useFrame(() => {
@@ -46,6 +52,15 @@ export function Office(props) {
 
   return (
     <group {...props} dispose={null}>
+      <mesh 
+      name="screen" 
+      geometry={nodes.screen.geometry} 
+      scale={[0.8, 1.45, 1.4]}
+      position={[ 0.64, 1.3, -1.700]} 
+      rotation={[Math.PI, 0.1, Math.PI / 2]} 
+      >
+        <meshBasicMaterial map={textureVSCode} toneMapped={false}/>
+        </mesh>
       <motion.group 
       scale={[0, 0, 0]}
       animate={{
@@ -118,7 +133,7 @@ export function Office(props) {
       }}
          name="imac" position={[0.098, 0.956, -1.665]} rotation={[-Math.PI, 0.219, -Math.PI]}>
           <mesh name="IMac_01_Cube026-Mesh" geometry={nodes['IMac_01_Cube026-Mesh'].geometry} material={textureMaterial} />
-          <mesh name="IMac_01_Cube026-Mesh_1" geometry={nodes['IMac_01_Cube026-Mesh_1'].geometry} material={textureMaterial} />
+          {/* <mesh name="IMac_01_Cube026-Mesh_1" geometry={nodes['IMac_01_Cube026-Mesh_1'].geometry} material={textureMaterial} /> */}
         </motion.group>
          <motion.group 
          scale={[0, 0, 0]}
@@ -141,3 +156,4 @@ export function Office(props) {
 }
 
 useGLTF.preload('models/scene.gltf');
+useTexture.preload('textures/baked.jpg');

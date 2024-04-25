@@ -7,37 +7,37 @@ import { atom, useAtom } from "jotai";
 import { useEffect, useRef } from "react";
 
 export const projects = [
-  {
-    title: "Billy",
-    url: "https://music.apple.com/us/album/billy/1685481843?i=1685481844",
-    image: "projects/Nsgmkbilly.jpg",
-    description: "NSGMK-Billy",
-  },
-  {
-    title: "Primitives XYZ",
-    url: "https://Primitives.xyz/",
-    image: "projects/Primitivesad.jpg",
-    description: "Solana built web3 art platform",
-  },
-  {
-    title: "Seek the truth",
-    url: "https://www.instagram.com/reel/C4nowGzO-ro/?igsh=eHN6eTNwM3cyMXBz",
-    image: "projects/void.jpg",
-    description: "you seek the truth.. shall one reveal everything at once",
-  },
-  {
-    title: "Wonderstrike pt.1",
-    url: "https://asx.univer.se",
-    image: "projects/Wonderstrikecover.jpg",
-    description: "Graphic novel short on wonderboi",
-  },
-  {
-    title: "New island2",
-    url: "https://www.instagram.com/reel/C5bVNtKOlDD/?igsh=d2tyb3liMnVoamk1",
-    image: "projects/newisland2.jpg",
-    description: "Short animation clip",
-  },
-];
+    {
+      title: "Billy",
+      url: "https://music.apple.com/us/album/billy/1685481843?i=1685481844",
+      image: "projects/Nsgmkbilly.jpg",
+      description: "NSGMK-Billy",
+    },
+    {
+      title: "Primitives XYZ",
+      url: "https://Primitives.xyz/",
+      image: "projects/Primitivesad.jpg",
+      description: "Solana built web3 art platform",
+    },
+    {
+      title: "Seek the truth",
+      url: "https://www.instagram.com/reel/C4nowGzO-ro/?igsh=eHN6eTNwM3cyMXBz",
+      image: "projects/void.jpg",
+      description: "you seek the truth.. shall one reveal everything at once",
+    },
+    {
+      title: "Wonderstrike pt.1",
+      url: "https://asx.univer.se",
+      image: "projects/Wonderstrikecover.jpg",
+      description: "Graphic novel short on wonderboi",
+    },
+    {
+      title: "New island2",
+      url: "https://www.instagram.com/reel/C5bVNtKOlDD/?igsh=d2tyb3liMnVoamk1",
+      image: "projects/newisland2.jpg",
+      description: "Short animation clip",
+    },
+  ];
 
 const Project = (props) => {
   const { project, highlighted } = props;
