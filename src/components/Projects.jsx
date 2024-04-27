@@ -20,22 +20,22 @@ export const projects = [
       description: "Solana built web3 art platform",
     },
     {
-      title: "Seek the truth",
-      url: "https://www.instagram.com/reel/C4nowGzO-ro/?igsh=eHN6eTNwM3cyMXBz",
-      image: "projects/void.jpg",
-      description: "you seek the truth.. shall one reveal everything at once",
-    },
-    {
-      title: "Wonderstrike pt.1",
+      title: "ANFASLIM P/I_001",
       url: "https://asx.univer.se",
-      image: "projects/Wonderstrikecover.jpg",
-      description: "Graphic novel short on wonderboi",
+      image: "projects/wonderboi.jpg",
+      description: "Portfolio Site",
     },
     {
-      title: "New island2",
-      url: "https://www.instagram.com/reel/C5bVNtKOlDD/?igsh=d2tyb3liMnVoamk1",
-      image: "projects/newisland2.jpg",
-      description: "Short animation clip",
+      title: "Tunneling",
+      url: "https://x.com/archive_asx/status/1771205969046806580?s=46&t=INmRHmkJtSuPnvLR5eqFlg",
+      image: "projects/tunneling.jpg",
+      description: "Tunneling out of metropolisx UIA's privately owned research city",
+    },
+    {
+      title: "wonderboi standard",
+      url: "https://www.linkedin.com/in/marcell-key-1009a6193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      image: "projects/wndrview.jpg",
+      description: "linkedin profile",
     },
   ];
 
