@@ -29,11 +29,11 @@ export const projects = [
       title: "Tunneling",
       url: "https://x.com/archive_asx/status/1771205969046806580?s=46&t=INmRHmkJtSuPnvLR5eqFlg",
       image: "projects/tunneling.jpg",
-      description: "Tunneling out of metropolisx UIA's privately owned research city",
+      description: "Tunneling out of metropolisx",
     },
     {
       title: "wonderboi standard",
-      url: "https://www.linkedin.com/in/marcell-key-1009a6193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      url: "https://www.linkedin.com/in/marcell-key-1009a6193/",
       image: "projects/wndrview.jpg",
       description: "linkedin profile",
     },
